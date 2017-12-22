@@ -1,0 +1,474 @@
+package action;
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.mail.HtmlEmail;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+import dao.MemberDAOImpl;
+import model.MemberBean;
+import model.ZipcodeBean;
+import model.ZipcodeBean2;
+
+@Controller
+public class MemberAction {
+
+	@Autowired
+	private MemberDAOImpl memberService;
+
+	// public void setMemberService(MemberDAOImpl memberService) {
+	// this.memberService = memberService;
+	// }// setter DI 설정
+
+	// ID중복검사 ajax함수로 처리부분
+	@RequestMapping(value = "/member_idcheck.nhn", method = RequestMethod.POST)
+	public void member_idcheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		PrintWriter out = response.getWriter();
+
+		String id = request.getParameter("memid");
+		String pass = request.getParameter("mpass");
+		System.out.println("id=" + id);
+		System.out.println("pass=" + pass);
+
+		int re = memberService.checkMemberId(id);
+		// System.out.println("re=" + re);
+		out.println(re);
+	}
+
+	/* 로그인 폼 뷰 */
+	@RequestMapping(value = "/member_login.nhn")
+	public String member_login() {
+		return "member/member_login";
+		// member 폴더의 member_login.jsp 뷰 페이지 실행
+	}
+
+	/* 비번찾기 폼 */
+	@RequestMapping(value = "/pwd_find.nhn")
+	public String pwd_find() {
+		return "member/pwd_find";
+		// member 폴더의 pwd_find.jsp 뷰 페이지 실행
+	}
+
+	/* 회원가입 폼 */
+	@RequestMapping(value = "/member_join.nhn")
+	public String member_join() {
+		return "member/member_join";
+		// member 폴더의 member_join.jsp 뷰 페이지 실행
+	}
+
+	/* 우편검색 폼 */
+	@RequestMapping(value = "/zipcode_find.nhn")
+	public String zipcode_find() {
+		return "member/zipcode_find";
+		// member 폴더의 zipcode_find.jsp 뷰 페이지 실행
+	}
+
+	/* 우편번호 디비로 부터 검색 */
+	@RequestMapping(value = "/zicode_find_ok.nhn", method = RequestMethod.POST)
+	public ModelAndView zicode_find_ok(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String dong = request.getParameter("dong");
+		List<ZipcodeBean2> zipcodeList = new ArrayList<ZipcodeBean2>();
+
+		zipcodeList = this.memberService.findZipcode("%" + dong + "%");
+		// 동을 기준으로 주소를 검색해서 컬렉션에 저
+
+		List<ZipcodeBean> zipcodeList2 = new ArrayList<ZipcodeBean>();
+
+		for (int i = 0; i < zipcodeList.size(); i++) {
+			ZipcodeBean2 zipcode_addr = zipcodeList.get(i);
+
+			String zipcode = zipcode_addr.getZipcode();// 우편번호 저장
+			String sido = zipcode_addr.getSido(); // 서울시,경기도 저장
+			String gugun = zipcode_addr.getGugun();// 구,군
+			String dong2 = zipcode_addr.getDong(); // 동
+			String addr = sido + " " + gugun + " " + dong2;// 서울시 서초구 서초동
+			// String addr2=sido+" "+gugun+" "+dong2+" "+bunji;//번지까지 저장
+			// zipcodeList.add(zipcode+","+addr+","+addr2);
+
+			ZipcodeBean zip = new ZipcodeBean();
+			zip.setZipcode(zipcode);
+			zip.setAddr(addr);
+
+			zipcodeList2.add(zip);
+			// 컬렉션에 주소를 요소값으로 저장
+		}
+
+		ModelAndView zipcodeM = new ModelAndView("member/zipcode_find");
+		zipcodeM.addObject("zipcodelist", zipcodeList2);
+		zipcodeM.addObject("dong", dong);
+
+		return zipcodeM;
+	}
+
+	/* 비번찾기 완료 */
+	@RequestMapping(value = "/pwd_find_ok.nhn", method = RequestMethod.POST)
+	public ModelAndView pwd_find_ok(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+
+		String id = request.getParameter("id").trim();
+		String name = request.getParameter("name").trim();
+
+		Map pm = new HashMap();
+		pm.put("id", id);
+		pm.put("name", name);// 컬렉션에 키값 쌍으로 저장
+
+		MemberBean member = this.memberService.findpwd(pm);
+
+		// 등록된 이메일로 비번 전송
+
+		// Mail Server 설정
+		String charSet = "utf-8";
+		String hostSMTP = "smtp.naver.com";
+		String hostSMTPid = "leesungeun1@naver.com";
+		String hostSMTPpwd = "dltjddms12!!";// 비밀번호 입력해야함
+
+		// 보내는 사람 EMail, 제목, 내용
+		String fromEmail = "leesungeun1@naver.com";
+		String fromName = "관리자입니다.";
+		String subject = "인증메일입니다! 비번을 다시 확인하세요";
+
+		// 받는 사람 E-Mail 주소
+		String mail = "member.getJoin_eamil()";
+
+		try {
+			HtmlEmail email = new HtmlEmail();
+			email.setDebug(true);
+			email.setCharset(charSet);
+			email.setSSL(true);
+			email.setHostName(hostSMTP);
+			email.setSmtpPort(587);
+
+			email.setAuthentication(hostSMTPid, hostSMTPpwd);
+			email.setTLS(true);
+			email.addTo(mail, charSet);
+			email.setFrom(fromEmail, fromName, charSet);
+			email.setSubject(subject);
+			email.setHtmlMsg(
+					"<p align = 'center'>Overflow에 오신것을 환영합니다.</p><br><div align='center'>" + "비밀번호 : " + +"</div>");
+			email.send();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		if (member == null) {// 값이 없는 경우
+			out.println("<script>");
+			out.println("alert('회원아이디와 이름이 맞지 않습니다!')");
+			out.println("history.go(-1)");
+			out.println("</script>");
+		} else {
+			ModelAndView pwdM = new ModelAndView("member/pwd_find");
+			pwdM.addObject("pwdok", member.getJoin_pwd());
+			return pwdM;
+		}
+		return null;
+	}
+
+	/* 회원 가입 저장 */
+	@RequestMapping(value = "/member_join_ok.nhn", method = RequestMethod.POST)
+	public String member_join_ok(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		MemberBean m = new MemberBean();
+
+		String uploadPath = request.getRealPath("upload");
+		int size = 10 * 1024 * 1024; // 10MB까지 업로드 가능
+
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8",
+				new DefaultFileRenamePolicy());
+
+		String join_id = multi.getParameter("join_id").trim();// 회원아이디
+		String join_pwd = multi.getParameter("join_pwd1").trim();// 회원비번
+		String join_name = multi.getParameter("join_name").trim();// 회원이름
+		String join_zip1 = multi.getParameter("join_zip1").trim();
+		String join_zip2 = multi.getParameter("join_zip2").trim();
+		String join_addr1 = multi.getParameter("join_addr1").trim();
+		String join_addr2 = multi.getParameter("join_addr2").trim();
+		String join_tel1 = multi.getParameter("join_tel1").trim();
+		String join_tel2 = multi.getParameter("join_tel2").trim();
+		String join_tel3 = multi.getParameter("join_tel3").trim();
+		String join_tel = join_tel1 + "-" + join_tel2 + "-" + join_tel3;
+		String join_phone1 = multi.getParameter("join_phone1").trim();
+		String join_phone2 = multi.getParameter("join_phone2").trim();
+		String join_phone3 = multi.getParameter("join_phone3").trim();
+		String join_phone = join_phone1 + "-" + join_phone2 + "-" + join_phone3;
+		String join_mailid = multi.getParameter("join_mailid").trim();
+		String join_maildomain = multi.getParameter("join_maildomain").trim();
+		String join_email = join_mailid + "@" + join_maildomain;
+
+		// 첨부 파일 받는 부분
+		m.setJoin_profile(multi.getFilesystemName((String) multi.getFileNames().nextElement()));
+
+		m.setJoin_id(join_id);
+		m.setJoin_pwd(join_pwd);
+		m.setJoin_name(join_name);
+		m.setJoin_zip1(join_zip1);
+		m.setJoin_zip2(join_zip2);
+		m.setJoin_addr1(join_addr1);
+		m.setJoin_addr2(join_addr2);
+		m.setJoin_tel(join_tel);
+		m.setJoin_phone(join_phone);
+		m.setJoin_email(join_email);
+
+		this.memberService.insertMember(m);
+
+		// 로그인 페이지로 이동
+		// response.sendRedirect("member_login.nhn");
+
+		return "redirect:/member_login.nhn";
+	}
+
+	/* 로그인 인증 */
+	@RequestMapping(value = "/member_login_ok.nhn", method = RequestMethod.POST)
+	public ModelAndView member_login_ok(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		// HttpSession 클래스는 세션객체를 생성해서 로그인 인증 처리를 하기 위해서 이다.
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();// 출력스트림 객체 생성
+		session = request.getSession();// 세션 객체 생성
+
+		String id = request.getParameter("id").trim();
+		String pwd = request.getParameter("pwd").trim();
+
+		MemberBean m = this.memberService.userCheck(id);
+
+		if (m == null) {// 등록되지 않은 회원일때
+			out.println("<script>");
+			out.println("alert('등록되지 않은 회원입니다!')");
+			out.println("history.back()");
+			out.println("</script>");
+		} else {// 등록된 회원일때
+			if (m.getJoin_pwd().equals(pwd)) {// 비번이 같을때
+				session.setAttribute("id", id);
+
+				String join_name = m.getJoin_name();
+				String join_profile = m.getJoin_profile();
+				session.setAttribute("join_name", join_name);
+				session.setAttribute("join_profile", join_profile);
+
+				ModelAndView loginM = new ModelAndView("index");
+				// jsp폴더의 index.jsp로 이동
+				return loginM;
+			} else {// 비번이 다를때
+				out.println("<script>");
+				out.println("alert('비번이 다릅니다!')");
+				out.println("history.go(-1)");
+				out.println("</script>");
+			}
+		}
+		return null;
+	}
+
+	/* 회원정보 수정 폼 */
+	@RequestMapping(value = "/member_edit.nhn")
+	public ModelAndView member_edit(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		// 아이디 키값의 세션아이디를 구함
+
+		if (id == null) {// 세션 아이디 값이 없는 경우
+			out.println("<script>");
+			out.println("alert('다시 로그인 해주세요!')");
+			out.println("location='member_login.nhn'");
+			out.println("</script>");
+		} else {
+			MemberBean editm = this.memberService.userCheck(id);
+			String join_tel = editm.getJoin_tel();
+			StringTokenizer st01 = new StringTokenizer(join_tel, "-");
+			// java.util 패키지의 StringTokenizer 클래스는 첫번째 전달인자를
+			// 두번째 -를 기준으로 문자열을 파싱해준다.
+			String join_tel1 = st01.nextToken();// 첫번째 전화번호 저장
+			String join_tel2 = st01.nextToken(); // 두번째 전번 저장
+			String join_tel3 = st01.nextToken();// 세번째 전번 저장
+
+			String join_phone = editm.getJoin_phone();
+			StringTokenizer st02 = new StringTokenizer(join_phone, "-");
+			// java.util 패키지의 StringTokenizer 클래스는 첫번째 전달인자를
+			// 두번째 -를 기준으로 문자열을 파싱해준다.
+			String join_phone1 = st02.nextToken();// 첫번째 전화번호 저장
+			String join_phone2 = st02.nextToken(); // 두번째 전번 저장
+			String join_phone3 = st02.nextToken();// 세번째 전번 저장
+
+			String join_email = editm.getJoin_email();
+			StringTokenizer st03 = new StringTokenizer(join_email, "@");
+			// java.util 패키지의 StringTokenizer 클래스는 첫번째 전달인자를
+			// 두번째 @를 기준으로 문자열을 파싱해준다.
+			String join_mailid = st03.nextToken();// 첫번째 전화번호 저장
+			String join_maildomain = st03.nextToken(); // 두번째 전번 저장
+
+			ModelAndView m = new ModelAndView("member/member_edit");
+			m.addObject("editm", editm);
+			m.addObject("join_tel1", join_tel1);
+			m.addObject("join_tel2", join_tel2);
+			m.addObject("join_tel3", join_tel3);
+			m.addObject("join_phone1", join_phone1);
+			m.addObject("join_phone2", join_phone2);
+			m.addObject("join_phone3", join_phone3);
+			m.addObject("join_mailid", join_mailid);
+			m.addObject("join_maildomain", join_maildomain);
+
+			return m;
+		}
+		return null;
+	}
+
+	/* 회원정보 수정 폼 */
+	@RequestMapping(value = "/member_edit_ok.nhn", method = RequestMethod.POST)
+	public ModelAndView member_edit_ok(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		session = request.getSession();// 세션객체를 만듬
+		MemberBean member = new MemberBean();
+
+		String uploadPath = request.getRealPath("upload");
+		int size = 10 * 1024 * 1024; // 10MB까지 업로드 가능
+
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8",
+				new DefaultFileRenamePolicy());
+
+		String id = (String) session.getAttribute("id");
+		// 세션아이디값을 취득
+		if (id == null) {
+			out.println("<script>");
+			out.println("alert('다시 로그인 해주세요!')");
+			out.println("location='member_login.nhn'");
+			out.println("</script>");
+		} else {
+			String join_pwd = multi.getParameter("join_pwd1").trim();
+			String join_name = multi.getParameter("join_name").trim();
+			String join_zip1 = multi.getParameter("join_zip1").trim();
+			String join_zip2 = multi.getParameter("join_zip2").trim();
+			String join_addr1 = multi.getParameter("join_addr1").trim();
+			String join_addr2 = multi.getParameter("join_addr2").trim();
+			String join_tel1 = multi.getParameter("join_tel1").trim();
+			String join_tel2 = multi.getParameter("join_tel2").trim();
+			String join_tel3 = multi.getParameter("join_tel3").trim();
+			String join_tel = join_tel1 + "-" + join_tel2 + "-" + join_tel3;
+			String join_phone1 = multi.getParameter("join_phone1").trim();
+			String join_phone2 = multi.getParameter("join_phone2").trim();
+			String join_phone3 = multi.getParameter("join_phone3").trim();
+			String join_phone = join_phone1 + "-" + join_phone2 + "-" + join_phone3;
+			String join_mailid = multi.getParameter("join_mailid").trim();
+			String join_maildomain = multi.getParameter("join_maildomain").trim();
+			String join_email = join_mailid + "@" + join_maildomain;
+
+			MemberBean editm = this.memberService.userCheck(id);
+			// 아이디를 기준으로 디비로 부터 회원정보를 가져옴
+
+			// 첨부 파일 받는 부분
+			member.setJoin_profile(multi.getFilesystemName((String) multi.getFileNames().nextElement()));
+
+			member.setJoin_id(id);
+			member.setJoin_pwd(join_pwd);
+			member.setJoin_name(join_name);
+			member.setJoin_zip1(join_zip1);
+			member.setJoin_zip2(join_zip2);
+			member.setJoin_addr1(join_addr1);
+			member.setJoin_addr2(join_addr2);
+			member.setJoin_tel(join_tel);
+			member.setJoin_phone(join_phone);
+			member.setJoin_email(join_email);
+
+			this.memberService.updateMember(member);// 수정 메서드 호출
+
+			// response.sendRedirect("member_edit.nhn");
+			ModelAndView mv = new ModelAndView("index");
+			mv.addObject("join_name", member.getJoin_name());
+			mv.addObject("join_profile", member.getJoin_profile());
+			return mv;
+		}
+		return null;
+	}
+
+	/* 회원정보 삭제 폼 */
+	@RequestMapping(value = "/member_del.nhn")
+	public ModelAndView member_del(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();// 출력 스트림 객체 생성
+		session = request.getSession();// 세션 객체 생성
+
+		String id = (String) session.getAttribute("id");
+		if (id == null) {
+			out.println("<script>");
+			out.println("alert('다시 로그인 해주세요!')");
+			out.println("location='member_login.nhn'");
+			out.println("</script>");
+		} else {
+			MemberBean deleteM = this.memberService.userCheck(id);
+
+			ModelAndView dm = new ModelAndView("member/member_del");
+			dm.addObject("d_id", id);
+			dm.addObject("d_name", deleteM.getJoin_name());
+			return dm;
+		}
+		return null;
+	}
+
+	/* 회원정보 삭제 완료 */
+	@RequestMapping(value = "/member_del_ok.nhn", method = RequestMethod.POST)
+	public ModelAndView member_del_ok(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		session = request.getSession();
+
+		String id = (String) session.getAttribute("id");
+		if (id == null) {
+			out.println("<script>");
+			out.println("alert('다시 로그인 해주세요!')");
+			out.println("location='member_login.nhn'");
+			out.println("</script>");
+		} else {
+			String pass = request.getParameter("pwd").trim();
+			String del_cont = request.getParameter("del_cont").trim();
+			MemberBean member = this.memberService.userCheck(id);
+
+			// 아이디에 해당하는 디비 회원정보를 가져온다.
+			if (!member.getJoin_pwd().equals(pass)) {
+				out.println("<script>");
+				out.println("alert('비번이 다릅니다!')");
+				out.println("history.back()");
+				out.println("</script>");
+			} else {// 비번이 같은 경우
+				String up = request.getRealPath("upload");
+				String fname = member.getJoin_profile();
+				// 디비에 저장된 기존 이진파일명을 가져옴
+				if (fname != null) {// 기존 이진파일이 존재하면
+					File delFile = new File(up + fname);
+					delFile.delete();// 기존 이진파일을 삭제
+				}
+				MemberBean delm = new MemberBean();
+				delm.setJoin_id(id);
+				delm.setJoin_delcont(del_cont);
+
+				this.memberService.deleteMember(delm);// 삭제 메서드 호출
+
+				session.invalidate();// 세션만료
+
+				response.sendRedirect("member_login.nhn");
+			}
+		}
+		return null;
+	}
+}

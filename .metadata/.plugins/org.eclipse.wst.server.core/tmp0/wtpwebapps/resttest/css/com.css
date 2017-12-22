@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+#com_del{
+	float:right;	
+}
+a:link{/*하이퍼링크 걸린곳 밑줄 사라지게 하기*/
+	text-decoration:none;
+}
+a:active{/*클릭하는 순간 밑줄 없앰 */
+	text-decoration:none;
+}
+a:visited{/*한번이라도 방문 한곳 밑줄 없앰*/
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline; /*마우스 오버시 밑줄 나오게 하기 */
+}

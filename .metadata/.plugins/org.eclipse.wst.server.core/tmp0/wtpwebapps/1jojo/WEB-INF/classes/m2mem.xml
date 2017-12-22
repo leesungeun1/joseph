@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="m2mem">
+	
+	<select id="list" resultType="m2mem">
+		select * from useraccount
+	</select>
+	
+	<select id="select" parameterType="String" resultType="m2mem">
+		select * from useraccount where id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="m2mem">
+		insert into useraccount values (ua_seq.nextval, #{id}, #{pass})
+	</insert>
+	
+	<update id="update" parameterType="Map">
+		update useraccount set pass = #{npass} where id = #{id} 
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from useraccount where id = #{id}
+	</delete>
+	
+</mapper>
+
+

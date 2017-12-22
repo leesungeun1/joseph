@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- HandlerMapping -->
+	<!-- <bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value> -->
+				<!-- 개인 정보 입력 -->
+				<!-- /info_write.nhn=infowriteController -->
+				<!-- 웹주소창에 http://127.0.0.1:8383/spring3/info_write.nhn
+				이라고 입력하면 빈아이디 infowriteController를 호출 -->
+				<!-- 개인정보 저장 -->
+				<!-- /info_write_ok.nhn=infowriteController -->
+				
+				<!-- 관리자모드와 공지사항 -->
+				<!-- /admin_index.nhn=adminGongjiAction
+				/admin_Login_ok.nhn=adminGongjiAction
+				/admin_logout.nhn=adminGongjiAction
+				/admin_gongji_write.nhn=adminGongjiAction
+				/admin_main.nhn=adminGongjiAction
+				/admingongji_write_ok.nhn=adminGongjiAction
+				/adminGongji_List.nhn=adminGongjiAction
+				/adminGongji_cont.nhn=adminGongjicontAction
+				/admingongji_edit_ok.nhn=adminGongjiAction
+				/admingongji_delete_ok.nhn=adminGongjiAction -->
+				
+				<!-- 사용자 공지 목록과 내용보기 -->
+				<!-- /gongji_list.nhn=gongjiAction
+				/gongji_cont.nhn=gongjiAction -->
+				
+				<!-- 사용자 단 회원관리 -->
+				<!-- /member_login.nhn=memberAction
+				/pwd_find.nhn=memberAction
+				/member_join.nhn=memberAction
+				/zipcode_find.nhn=memberAction
+				/zicode_find_ok.nhn=memberAction
+				/pwd_find_ok.nhn=memberAction
+				/member_join_ok.nhn=memberAction
+				/member_login_ok.nhn=memberAction
+				/member_edit.nhn=memberAction
+				/member_edit_ok.nhn=memberAction
+				/member_del.nhn=memberAction
+				/member_del_ok.nhn=memberAction -->
+				
+				<!-- 사용자 단 자료실 -->
+				<!-- /bbs_write.nhn=bbsAction
+				/bbs_write_ok.nhn=bbsAction
+				/bbs_list.nhn=bbsAction
+				/bbs_cont.nhn=bbsAction
+				/bbs_edit_ok.nhn=bbsAction
+				/bbs_delete_ok.nhn=bbsAction
+				/bbs_find_ok.nhn=bbsAction
+				/bbs_reply_ok.nhn=bbsAction -->
+				
+				<!-- 사용자 단 게시판 -->
+				<!-- /board_write.nhn=boardAction
+				/board_write_ok.nhn=boardAction
+				/board_list.nhn=boardAction
+				/board_cont.nhn=boardAction
+				/board_edit_ok.nhn=boardAction	
+				/board_del_ok.nhn=boardAction		
+				/board_reply_ok.nhn=boardAction	
+			</value>
+		</property>
+	</bean> -->
+
+	<!-- Controller -->		  
+	  <!-- 사용자 단 게시판 액션클래스 -->
+	  <!--bean id="boardAction" class="action.BoardAction" /-->
+	  <bean id="boardAction" class="action.BoardAction"
+	  p:boardService-ref="boardService" />
+	  
+	  <bean id="boardService" class="dao.BoardDAOImpl"/>
+	  
+	  <!-- 사용자 단 자료실 액션클래스 -->
+	  <!-- <bean id="bbsAction" class="action.BbsAction"
+	  p:bbsService-ref="bbsService" /> -->
+	  
+	  <!-- 사용자 단 회원관리 액션클래스  -->
+	  <!-- <bean id="memberAction" class="action.MemberAction"
+	  p:memberService-ref="memberService" /> -->
+	  
+	  <!-- 사용자 공지 목록과 내용보기,조회수증가 -->
+	 <!--  <bean id="gongjiAction" class="action.GongjiAction"
+	   p:adminService-ref="adminService" /> -->
+	  
+	  <!-- 관리자 공지 내용보기/조회수(spring JDBC) -->
+	  <!-- <bean id="adminGongjicontAction" class="action.AdminGongjicontAction"
+	  p:gongjiService-ref="gongjiService" /> -->
+	  
+	  <!-- 관리자 모드와 공지사항 -->
+	  <!-- <bean id="adminGongjiAction" class="action.AdminGongjiAction"
+	  p:adminService-ref="adminService" />	   -->
+	  
+	  <!-- 개인 정보 입력 컨트롤러 -->
+	 <!--  <bean id="infowriteController" class="controller.InfoController" 
+	  p:infoService-ref="infoService" /> -->
+	  <!-- 
+	    빈아이디 infowriteController를 호출하면 controller 패키지의 InfoController
+	    클래스가 실행. p:infoService-ref="infoService" 이부분은 스프링에서 
+	    setter메서드로 DI 의존관계 설정
+	   -->
+	                
+	<!-- ViewResolver -->
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<!-- 뷰페이지 폴더와 파일 확장자 설정. prefix value값이 
+	폴더가 된다. 폴더 경로가 jsp 가 된다. suffix value 값이 .jsp
+	뷰페이지 파일 확장자가 된다. -->	
+	
+</beans>
+
+

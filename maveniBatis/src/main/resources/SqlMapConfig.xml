@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0 //EN" 
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<transactionManager type="JDBC" commitRequired="false">	
+		<dataSource type="DBCP">
+			<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="JDBC.ConnectionURL"
+				value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="JDBC.Username" value="spring" />
+			<property name="JDBC.Password" value="spring123" />			
+		</dataSource>
+	</transactionManager>
+
+	<!-- <sqlMap resource="info.xml" />   -->	
+	<!-- <sqlMap resource="admin.xml" /> --> <!-- 관리자 디비 연동  -->
+	<!-- <sqlMap resource="member.xml" /> --> <!-- 사용자 회원관리 디비 연동  -->
+	<!-- <sqlMap resource="bbs.xml" /> --> <!-- 사용자단 자료실 -->  
+	<sqlMap resource="board.xml" /> <!-- 사용자단 게시판 --> 
+</sqlMapConfig>
+
+
+
+
+
+
+
+
+
+
+

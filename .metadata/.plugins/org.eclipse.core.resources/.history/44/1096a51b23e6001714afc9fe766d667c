@@ -1,0 +1,27 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test {
+
+	private static WebDriver driver;
+	private static WebElement text_box_id;
+	private static WebElement test_box_pw;
+	private static WebElement btn_login;
+
+	public static void main(String[] args) throws InterruptedException {
+
+		// Open the Browser
+
+		System.setProperty("webdriver.chrom.driver", "assets/drivers/chromedriver.exe");
+		//WebDriver driver= new ChromeDriver();
+		driver= new ChromeDriver();
+		
+		//Open A Website
+		
+		//driver.get("URL PATH");
+		
+	}
+}

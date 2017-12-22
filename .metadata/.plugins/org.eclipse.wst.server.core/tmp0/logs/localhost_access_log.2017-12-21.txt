@@ -1,0 +1,15 @@
+127.0.0.1 - - [21/Dec/2017:14:48:27 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:48:29 +0900] "GET /1jojo/crawl/cwl_result.jsp HTTP/1.1" 200 2742
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:48:29 +0900] "GET /favicon.ico HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:48:36 +0900] "GET /1jojo/crawl/CrawlAnalysisAction.cr HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:48:38 +0900] "GET /1jojo/crawl/CrawlAnalysisAction.cr HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:50:15 +0900] "GET /1jojo/crawl/cwl_ready.jsp HTTP/1.1" 200 6286
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:50:15 +0900] "GET /1jojo/crawl/loading_logofinal_by_zegerdon-d60eb1v.gif HTTP/1.1" 200 268113
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:14:50:21 +0900] "POST /1jojo/CrawlAddAction.cr HTTP/1.1" 500 1978
+127.0.0.1 - - [21/Dec/2017:16:09:24 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:09:25 +0900] "GET /crawlingtest/ HTTP/1.1" 200 165
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:09:25 +0900] "GET /favicon.ico HTTP/1.1" 404 1084
+127.0.0.1 - - [21/Dec/2017:16:22:05 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:22:07 +0900] "GET /test/ HTTP/1.1" 200 165
+127.0.0.1 - - [21/Dec/2017:16:39:09 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [21/Dec/2017:16:39:10 +0900] "GET /test/WEB-INF/classes/test/test.java HTTP/1.1" 404 1050

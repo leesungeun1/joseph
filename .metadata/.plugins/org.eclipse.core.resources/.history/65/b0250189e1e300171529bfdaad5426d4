@@ -1,0 +1,11 @@
+package action;
+
+import org.springframework.stereotype.Controller;
+
+import service.BoardServiceImpl;
+
+@Controller
+public class BoardAction {
+
+	private BoardServiceImpl boardService;
+}

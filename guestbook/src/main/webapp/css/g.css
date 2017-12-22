@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+#g_wrap{
+	width:410px; height:380px; border:1px dotted blue;
+	/* dotted 점선 */
+	margin-left:auto; margin-right:auto; /*수평 중앙 정렬 */
+	margin-top:100px; 
+	border-radius:20px; box-shadow:20px 20px 20px #ccc;
+}
+#g_wrap .g_title{
+	margin:25px 0 0 100px; width:200px; font-size:20px;
+	background:pink; text-align:center;
+	border-radius:15px; padding:3px;
+}
+#g_t{
+	margin:23px 0 0 26px;
+}
+#g_t th{
+	background:pink; border-radius:15px;
+}
+.box{
+	border:1px solid skyblue; border-radius:15px;
+	padding:3px;
+}
+.box:hover{/* :hover는 마우스 오버시 */
+	background:#ccc;
+}
+#g_menu{
+	margin:23px 0 0 140px;
+}
+.input_b{
+	border:1px solid red; font-weight:bold;/*글자를 진하게*/
+}
+.input_b:hover{
+	border-radius:15px; box-shadow:10px 10px 10px skyblue;
+	cursor:hand; cursor:pointer; /*손가락 모양 */
+}
+
+/*g_del.jsp ui*/
+#gDel_wrap{
+ width:240px; height:160px; border:1px solid blue;
+ border-radius:20px;
+ margin-left:auto; margin-right:auto;
+ margin-top:100px;	
+}
+#gDel_wrap .gDel_title{
+	margin:20px 0 0 40px; width:160px;
+	font-size:18px; background:pink; border-radius:15px;
+	text-align:center; padding:3px;
+}
+#gDel_t{
+	margin:20px 0 0 20px;
+}
+#gDel_t th{
+	background:pink; border-radius:15px;
+}
+#gDel_menu{
+	margin:17px 0 0 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

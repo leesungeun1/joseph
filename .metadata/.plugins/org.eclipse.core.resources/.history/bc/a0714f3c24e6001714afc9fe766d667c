@@ -1,0 +1,46 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class test {
+
+	private static WebDriver driver;
+	private static WebElement text_box_id;
+	private static WebElement text_box_pw;
+	private static WebElement btn_login;
+
+	public static void main(String[] args) throws InterruptedException {
+
+		// Open the Browser
+
+		System.setProperty("webdriver.chrom.driver", "assets/drivers/chromedriver.exe");
+		// WebDriver driver= new ChromeDriver();
+		driver = new ChromeDriver();
+
+		// Open A Website
+
+		// driver.get("URL PATH");
+
+		Thread.sleep(500);
+
+		driver.get("https://nid.naver.com/nidlogin.login?url=http%3A%2F%2Fwww.naver.com");
+
+		// 아이디어 입력
+		text_box_id = driver.findElement(By.id("id"));
+		text_box_id.clear();
+		text_box_id.sendKeys("");
+
+		// 패스워드 입력
+		text_box_pw = driver.findElement(By.id("pw"));
+		text_box_pw.clear();
+		text_box_pw.sendKeys("");
+
+		Thread.sleep(1000);
+		//로그인 버튼 클릭
+		
+		btn_login=driver.findElement(By.xpath("//*[@id='fmNIDLogin']/fieldset/input"));
+	}
+}

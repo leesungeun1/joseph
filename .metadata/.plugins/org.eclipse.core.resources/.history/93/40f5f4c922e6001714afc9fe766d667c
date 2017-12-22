@@ -1,0 +1,19 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class test {
+
+	private static WebDriver driver;
+	private static WebElement text_box_id;
+	private static WebElement test_box_pw;
+	private static WebElement btn_login;
+
+	public static void main(String[] args) throws InterruptedException {
+
+		// Open the Browser
+
+		System.setProperty("webdriver.chrom.driver", "assets/drivers/chromedriver.exe");
+	}
+}

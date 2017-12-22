@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<body>
+
+<h2>JSON Object Creation in JavaScript</h2>
+
+<p id="demo"></p>
+<!--데모값을 뿌릴것이다. -->
+<script>
+var text = '{"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"}';
+// 제이슨 값을 벨류값으로 작성해서 obj 자바스크립트 객체로 바꿔서 계속누적시켜 값을 뿌려줘라~
+var obj = JSON.parse(text);
+
+var info =
+ obj.name + "<br>" +
+ obj.street + "<br>" +
+ obj.phone;
+
+$("#demo").append(info);
+
+</script>
+
+</body>
+</html>

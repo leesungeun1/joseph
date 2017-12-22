@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- Controller -->		  
+	  <!-- 사용자 단 게시판 액션클래스 -->
+	  <bean id="boardAction" class="controller.EmailController"/>
+	  
+	  <!-- <bean id="boardAction" class="controller.BoardController"
+	  p:boardService-ref="boardService" />
+	  
+	  <bean id="boardService" class="dao.BoardDAO"/> -->
+	  
+	  
+	<!-- ViewResolver -->
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<!-- 뷰페이지 폴더와 파일 확장자 설정. prefix value값이 
+	폴더가 된다. 폴더 경로가 jsp 가 된다. suffix value 값이 .jsp
+	뷰페이지 파일 확장자가 된다. -->	
+	
+</beans>
+
+

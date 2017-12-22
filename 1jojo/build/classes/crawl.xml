@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="crawl">
+
+	<!-- 검색결과 저장 -->
+	<insert id="crawl_search_list_insert" parameterType="net.crawl.db.search_list_Bean">
+		insert into search_list(search_com_No,com_qual,com_preex,com_name,com_link)
+		values(#{search_com_No},#{com_qual},#{com_preex},#{com_name},#{com_link})	
+	</insert>
+	<!-- 분석결과 저장 -->
+	<insert id="crawl_search_qual_insert" parameterType="net.crawl.db.search_qual_Bean">
+		insert into search_qual(search_com_No,
+									No,
+									com_qual,
+									com_preex,
+									com_frequency)
+		values(#{search_com_No},
+				#{No},
+				#{com_qual},
+				#{com_preex},
+				#{com_frequency})	
+	</insert>
+	
+<!-- 	검색결과 출력-->
+	<select id="crawl_search_list_select"  parameterType="String"  resultType="net.crawl.db.search_list_Bean">
+	    <![CDATA[
+		select * from search_list
+	   	where search_com_No = #{search_com_No}
+		]]>
+	</select>
+	<!-- 	분석결과 출력-->
+	<select id="crawl_search_qual_select"  parameterType="String"  resultType="net.crawl.db.search_qual_Bean">
+	    <![CDATA[
+		select * from search_qual
+	   	where search_com_No = #{search_com_No}
+		]]>
+	</select>
+	
+<!-- 	search_com_No 추출 -->
+	<select id="crawl_com_No_select"  parameterType="String"  resultType="String">
+	    <![CDATA[
+		select search_com_No from search_qual
+	   	where No = #{No} AND rownum =1
+		]]>
+	</select>
+	
+	
+	<delete id="search_list_del" parameterType="String">
+		delete from search_list where search_com_No=#{search_com_No}
+	</delete>
+	
+		<delete id="search_qual_del" parameterType="String">
+		delete from search_qual where search_com_No=#{search_com_No}
+	</delete>
+</mapper>
+
+
+	

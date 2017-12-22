@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="ko" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온라인 알람 시계</title>
+<meta name="rating" content="general">
+<meta name="robots" content="index,follow">
+<meta name="description" property="og:description"
+	content="무료 온라인 알람 시계, 인터넷 알람 시계 및 기초 시계입니다. 알람 시계를 쉽게 설정합니다. 시간에 깨웁니다.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@onlinealarmkur">
+<meta name="twitter:url" content="http://onlinealarmkur.com/ko/">
+<meta name="twitter:title" content="온라인 알람 시계">
+<meta name="twitter:description"
+	content="무료 온라인 알람 시계, 인터넷 알람 시계 및 기초 시계입니다. 알람 시계를 쉽게 설정합니다. 시간에 깨웁니다.">
+<meta name="twitter:image"
+	content="http://onlinealarmkur.com/assets/icons/online-alarm-clock.jpg">
+<meta property="og:image"
+	content="http://onlinealarmkur.com/assets/icons/online-alarm-clock.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="온라인 알람 시계">
+<meta property="og:url" content="http://onlinealarmkur.com/ko/">
+<meta property="og:title" content="온라인 알람 시계">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="1065763193535085">
+<meta itemprop="name" content="온라인 알람 시계">
+<meta itemprop="description"
+	content="무료 온라인 알람 시계, 인터넷 알람 시계 및 기초 시계입니다. 알람 시계를 쉽게 설정합니다. 시간에 깨웁니다.">
+<meta itemprop="image"
+	content="http://onlinealarmkur.com/assets/icons/online-alarm-clock.jpg">
+<meta name="msapplication-config"
+	content="http://onlinealarmkur.com/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" sizes="180x180"
+	href="http://onlinealarmkur.com/assets/icons/xapple-touch-icon.png.pagespeed.ic.aT7cNJvM_s.webp">
+<link rel="icon" type="image/png"
+	href="http://onlinealarmkur.com/assets/icons/xfavicon-32x32.png.pagespeed.ic.-bWCpcEmci.webp"
+	sizes="32x32">
+<link rel="icon" type="image/png"
+	href="http://onlinealarmkur.com/assets/icons/xfavicon-16x16.png.pagespeed.ic.VeJZD7yNFJ.webp"
+	sizes="16x16">
+<link rel="manifest"
+	href="http://onlinealarmkur.com/assets/icons/manifest.json">
+<link rel="mask-icon"
+	href="http://onlinealarmkur.com/assets/icons/safari-pinned-tab.svg"
+	color="#ff0000">
+<link rel="shortcut icon"
+	href="http://onlinealarmkur.com/assets/icons/favicon.ico">
+<link
+	href="http://onlinealarmkur.com/assets/dist/A.style.min.css.pagespeed.cf.vf0VBTFRao.css"
+	rel="stylesheet" type="text/css" />
+<link href="http://onlinealarmkur.com/humans.txt" type="text/plain"
+	rel="author" />
+<!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+</head>
+<body>
+	<div class="container">
+		<div id="change-language" class="dropdown ltr">
+			<div class="btn btn-dark dropdown-toggle" role="button"
+				id="languages" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="true">
+				<svg viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg"
+					class="svg-icon icon-language">
+					<path
+						d="M10.219 16.844c-0.031 0.109-0.797-0.25-1-0.328-0.203-0.094-1.125-0.609-1.359-0.766s-1.125-0.891-1.234-0.938v0c-0.562 0.859-1.281 1.875-2.094 2.828-0.281 0.328-1.125 1.391-1.641 1.719-0.078 0.047-0.531 0.094-0.594 0.063 0.25-0.187 0.969-1.078 1.281-1.437 0.391-0.453 2.25-3.047 2.562-3.641 0.328-0.594 1.312-2.562 1.359-2.75-0.156-0.016-1.391 0.406-1.719 0.516-0.313 0.094-1.172 0.297-1.234 0.344-0.063 0.063-0.016 0.25-0.047 0.313s-0.313 0.203-0.484 0.234c-0.156 0.047-0.516 0.063-0.734 0-0.203-0.047-0.391-0.25-0.438-0.328 0 0-0.063-0.094-0.078-0.359 0.187-0.063 0.5-0.078 0.844-0.172s1.188-0.344 1.641-0.5 1.328-0.484 1.594-0.547c0.281-0.047 0.984-0.516 1.359-0.641s0.641-0.281 0.656-0.203 0 0.422-0.016 0.516c-0.016 0.078-0.766 1.547-0.875 1.781-0.063 0.125-0.5 0.953-1.203 2.047 0.25 0.109 0.781 0.328 1 0.438 0.266 0.125 2.125 0.906 2.219 0.938s0.266 0.75 0.234 0.875zM7.016 9.25c0.047 0.266-0.031 0.375-0.063 0.438-0.156 0.297-0.547 0.5-0.781 0.594s-0.625 0.187-0.938 0.187c-0.141-0.016-0.422-0.063-0.766-0.406-0.187-0.203-0.328-0.75-0.266-0.688s0.516 0.125 0.719 0.078 0.688-0.187 0.906-0.25c0.234-0.078 0.703-0.203 0.859-0.219 0.156 0 0.281 0.063 0.328 0.266zM17.922 11.266l0.984 3.547-2.172-0.656zM0.609 23.766l10.844-3.625v-16.125l-10.844 3.641v16.109zM20 18.813l1.594 0.484-2.828-10.266-1.563-0.484-3.375 8.375 1.594 0.484 0.703-1.719 3.297 1.016zM12.141 3.781l8.953 2.875v-5.938zM17 24.453l2.469 0.203-0.844 2.5-0.625-1.031c-1.266 0.812-2.828 1.437-4.312 1.687-0.453 0.094-0.969 0.187-1.422 0.187h-1.313c-1.656 0-4.672-0.984-5.984-1.937-0.094-0.078-0.125-0.141-0.125-0.25 0-0.172 0.125-0.297 0.281-0.297 0.141 0 0.875 0.453 1.078 0.547 1.406 0.703 3.375 1.344 4.953 1.344 1.953 0 3.281-0.25 5.063-1.016 0.516-0.234 0.969-0.531 1.453-0.797zM24 7.594v16.859c-12.078-3.844-12.094-3.844-12.094-3.844-0.25 0.109-11.453 3.891-11.609 3.891-0.125 0-0.234-0.078-0.281-0.203 0-0.016-0.016-0.031-0.016-0.047v-16.844c0.016-0.047 0.031-0.125 0.063-0.156 0.094-0.109 0.219-0.141 0.313-0.172 0.047-0.016 1-0.328 2.328-0.781v-6l8.719 3.094c0.109-0.031 9.828-3.391 9.969-3.391 0.172 0 0.313 0.125 0.313 0.328v6.531z"></path></svg>
+				한국어 <span class="caret"></span>
+			</div>
+			<ul class="dropdown-menu scrollable-menu" aria-labelledby="languages">
+				<li><a href="http://onlinealarmkur.com/id/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Jam Alarm Online"> Bahasa Indonesia </a></li>
+				<li><a href="http://onlinealarmkur.com/ms/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Jam Loceng Online"> Bahasa Melayu </a></li>
+				<li><a href="http://onlinealarmkur.com/cs/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Budík"> Čeština </a></li>
+				<li><a href="http://onlinealarmkur.com/da/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Alarm Ur"> Dansk </a></li>
+				<li><a href="http://onlinealarmkur.com/de/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Wecker"> Deutsch </a></li>
+				<li><a href="http://onlinealarmkur.com/et/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Äratuskell"> Eesti </a></li>
+				<li><a href="http://onlinealarmkur.com/en/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Alarm Clock"> English </a></li>
+				<li><a href="http://onlinealarmkur.com/es/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Reloj Alarma Despertador Online"> Español </a></li>
+				<li><a href="http://onlinealarmkur.com/tl/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online na Alarm Clock"> Filipino </a></li>
+				<li><a href="http://onlinealarmkur.com/fr/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Réveil en ligne"> Français </a></li>
+				<li><a href="http://onlinealarmkur.com/hr/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Budilica"> Hrvatski </a></li>
+				<li><a href="http://onlinealarmkur.com/lv/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Tiešsaistes modinātājs"> Latviešu </a></li>
+				<li><a href="http://onlinealarmkur.com/lt/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Internetinis Žadintuvas"> Lietuvių </a></li>
+				<li><a href="http://onlinealarmkur.com/hu/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Ébresztő Óra"> Magyar </a></li>
+				<li><a href="http://onlinealarmkur.com/nb/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Vekkerklokke"> Norsk Bokmål </a></li>
+				<li><a href="http://onlinealarmkur.com/is/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Vekjaraklukka á netinu"> Íslenska </a></li>
+				<li><a href="http://onlinealarmkur.com/it/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Sveglia Online"> Italiano </a></li>
+				<li><a href="http://onlinealarmkur.com/nl/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Wekker"> Nederlands </a></li>
+				<li><a href="http://onlinealarmkur.com/pl/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Budzik Online"> Polski </a></li>
+				<li><a href="http://onlinealarmkur.com/pt/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Despertador Online"> Português </a></li>
+				<li><a href="http://onlinealarmkur.com/ro/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Ceas deşteptător online"> Română </a></li>
+				<li><a href="http://onlinealarmkur.com/sq/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Orë me Zile Online"> Shqip </a></li>
+				<li><a href="http://onlinealarmkur.com/sk/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Budík"> Slovenčina </a></li>
+				<li><a href="http://onlinealarmkur.com/sl/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Spletna Budilka"> Slovenščina </a></li>
+				<li><a href="http://onlinealarmkur.com/sr/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Onlajn budilnik"> Srpski </a></li>
+				<li><a href="http://onlinealarmkur.com/fi/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Herätyskello Netissä"> Suomi </a></li>
+				<li><a href="http://onlinealarmkur.com/sv/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Online Väckarklocka"> Svenska </a></li>
+				<li><a href="http://onlinealarmkur.com/vi/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Đồng hồ báo thức trực tuyến"> Tiếng Việt </a></li>
+				<li><a href="http://onlinealarmkur.com/" data-container="body"
+					data-toggle="tooltip" data-placement="right"
+					title="Online Alarm Kur"> Türkçe </a></li>
+				<li><a href="http://onlinealarmkur.com/el/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Διαδικτυακό Ξυπνητήρι"> ελληνικά </a></li>
+				<li><a href="http://onlinealarmkur.com/bg/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Онлайн будилник"> Български </a></li>
+				<li><a href="http://onlinealarmkur.com/ru/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Онлайн будильник"> русский </a></li>
+				<li><a href="http://onlinealarmkur.com/uk/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="Онлайн Будильник"> Українська </a></li>
+				<li><a href="http://onlinealarmkur.com/ka/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="ონლაინ მაღვიძარა"> ქართული </a></li>
+				<li><a href="http://onlinealarmkur.com/he/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="שעון מעורר אונליין"> ‏עברית </a></li>
+				<li><a href="http://onlinealarmkur.com/ur/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="آن لائن الارم گھڑی"> اردو </a></li>
+				<li><a href="http://onlinealarmkur.com/ar/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="منبه أون لاين"> العربية </a></li>
+				<li><a href="http://onlinealarmkur.com/fa/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="ساعت زنگ هشدار آنلاین"> ‏فارسی‏ </a></li>
+				<li><a href="http://onlinealarmkur.com/hi/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="ऑनलाइन अलार्म घड़ी"> हिन्दी </a></li>
+				<li><a href="http://onlinealarmkur.com/bn/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="অনলাইন অ্যালার্ম ঘড়ি"> বাংলা </a></li>
+				<li><a href="http://onlinealarmkur.com/th/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="นาฬิกาปลุกออนไลน์"> ภาษาไทย </a></li>
+				<li><a href="http://onlinealarmkur.com/ko/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="온라인 알람 시계"> 한국어 </a></li>
+				<li><a href="http://onlinealarmkur.com/zh-tw/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="線上鬧鐘"> 中文(台灣) </a></li>
+				<li><a href="http://onlinealarmkur.com/zh-cn/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="在线闹钟"> 中文(简体) </a></li>
+				<li><a href="http://onlinealarmkur.com/ja/"
+					data-container="body" data-toggle="tooltip" data-placement="right"
+					title="オンライン アラーム時計"> 日本語 </a></li>
+			</ul>
+		</div>
+		<div class="alt-content-right ltr">
+			<ul>
+				<li><a class="text" href="http://timer.onlinealarmkur.com/ko/"
+					title="온라인 카운트 다운 타이머"> <svg viewBox="0 0 24 28"
+							xmlns="http://www.w3.org/2000/svg"
+							class="svg-icon icon-hourglass-start">
+							<path
+								d="M22 2c0 5.781-2.766 9.969-5.828 12 3.063 2.031 5.828 6.219 5.828 12h1.5c0.281 0 0.5 0.219 0.5 0.5v1c0 0.281-0.219 0.5-0.5 0.5h-23c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h1.5c0-5.781 2.766-9.969 5.828-12-3.063-2.031-5.828-6.219-5.828-12h-1.5c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h23c0.281 0 0.5 0.219 0.5 0.5v1c0 0.281-0.219 0.5-0.5 0.5h-1.5zM20 2h-16c0 0.688 0.047 1.359 0.141 2h15.719c0.094-0.641 0.141-1.313 0.141-2zM20 26c0-5.609-3.094-9.75-6.203-11h-3.594c-3.109 1.25-6.203 5.391-6.203 11h16z"></path></svg>온라인
+						카운트 다운 타이머
+				</a></li>
+				<li><a class="text"
+					href="http://stopwatch.onlinealarmkur.com/ko/" title="온라인 스톱워치">
+						<svg viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg"
+							class="svg-icon icon-history">
+							<path
+								d="M12 26c-6.609 0-12-5.391-12-12 0-3.578 1.578-6.953 4.328-9.234 0.203-0.156 0.5-0.141 0.672 0.031l2.156 2.141c0.094 0.109 0.141 0.25 0.141 0.391-0.016 0.141-0.078 0.281-0.187 0.359-1.984 1.531-3.109 3.828-3.109 6.312 0 4.406 3.594 8 8 8s8-3.594 8-8c0-2.047-0.781-3.984-2.141-5.437l-2.156 2.141c-0.281 0.297-0.719 0.375-1.078 0.219-0.375-0.156-0.625-0.516-0.625-0.922v-7c0-0.547 0.453-1 1-1h7c0.406 0 0.766 0.25 0.922 0.625 0.156 0.359 0.078 0.797-0.219 1.078l-2.016 2.031c2.078 2.203 3.313 5.187 3.313 8.266 0 6.609-5.391 12-12 12zM16.5 16h-7c-0.281 0-0.5-0.219-0.5-0.5v-5c0-0.281 0.219-0.5 0.5-0.5h1c0.281 0 0.5 0.219 0.5 0.5v3.5h5.5c0.281 0 0.5 0.219 0.5 0.5v1c0 0.281-0.219 0.5-0.5 0.5z"></path></svg>온라인
+						스톱워치
+				</a></li>
+			</ul>
+		</div>
+		<div class="row open-sans ltr">
+			<h1 class="main-header">
+				<a href="#" class="with-modal" title="알람 시계에 대한 정보"
+					data-toggle="modal" data-target="#about">온라인 알람 시계</a>
+			</h1>
+			<div class="top-links">
+				<a class="blue" title="온라인 알람 시계"
+					href="http://onlinealarmkur.com/ko/"> <svg viewBox="0 0 26 28"
+						xmlns="http://www.w3.org/2000/svg" class="svg-icon icon-volume-up">
+						<path
+							d="M12 5.5v17c0 0.547-0.453 1-1 1-0.266 0-0.516-0.109-0.703-0.297l-5.203-5.203h-4.094c-0.547 0-1-0.453-1-1v-6c0-0.547 0.453-1 1-1h4.094l5.203-5.203c0.187-0.187 0.438-0.297 0.703-0.297 0.547 0 1 0.453 1 1zM18 14c0 1.563-0.953 3.078-2.422 3.672-0.125 0.063-0.266 0.078-0.391 0.078-0.547 0-1-0.438-1-1 0-1.188 1.813-0.859 1.813-2.75s-1.813-1.563-1.813-2.75c0-0.562 0.453-1 1-1 0.125 0 0.266 0.016 0.391 0.078 1.469 0.578 2.422 2.109 2.422 3.672zM22 14c0 3.172-1.906 6.125-4.844 7.359-0.125 0.047-0.266 0.078-0.391 0.078-0.562 0-1.016-0.453-1.016-1 0-0.438 0.25-0.734 0.609-0.922 0.422-0.219 0.812-0.406 1.188-0.688 1.547-1.125 2.453-2.922 2.453-4.828s-0.906-3.703-2.453-4.828c-0.375-0.281-0.766-0.469-1.188-0.688-0.359-0.187-0.609-0.484-0.609-0.922 0-0.547 0.453-1 1-1 0.141 0 0.281 0.031 0.406 0.078 2.938 1.234 4.844 4.188 4.844 7.359zM26 14c0 4.797-2.859 9.141-7.266 11.031-0.125 0.047-0.266 0.078-0.406 0.078-0.547 0-1-0.453-1-1 0-0.453 0.234-0.703 0.609-0.922 0.219-0.125 0.469-0.203 0.703-0.328 0.438-0.234 0.875-0.5 1.281-0.797 2.562-1.891 4.078-4.875 4.078-8.062s-1.516-6.172-4.078-8.062c-0.406-0.297-0.844-0.562-1.281-0.797-0.234-0.125-0.484-0.203-0.703-0.328-0.375-0.219-0.609-0.469-0.609-0.922 0-0.547 0.453-1 1-1 0.141 0 0.281 0.031 0.406 0.078 4.406 1.891 7.266 6.234 7.266 11.031z"></path></svg>소리
+				</a> <a class="red" title="유튜브 | 온라인 알람 시계"
+					href="http://youtube.onlinealarmkur.com/ko/"> <svg
+						viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"
+						class="svg-icon icon-youtube-play">
+						<path
+							d="M11.109 17.625l7.562-3.906-7.562-3.953v7.859zM14 4.156c5.891 0 9.797 0.281 9.797 0.281 0.547 0.063 1.75 0.063 2.812 1.188 0 0 0.859 0.844 1.109 2.781 0.297 2.266 0.281 4.531 0.281 4.531v2.125s0.016 2.266-0.281 4.531c-0.25 1.922-1.109 2.781-1.109 2.781-1.062 1.109-2.266 1.109-2.812 1.172 0 0-3.906 0.297-9.797 0.297v0c-7.281-0.063-9.516-0.281-9.516-0.281-0.625-0.109-2.031-0.078-3.094-1.188 0 0-0.859-0.859-1.109-2.781-0.297-2.266-0.281-4.531-0.281-4.531v-2.125s-0.016-2.266 0.281-4.531c0.25-1.937 1.109-2.781 1.109-2.781 1.062-1.125 2.266-1.125 2.812-1.188 0 0 3.906-0.281 9.797-0.281v0z"></path></svg>유튜브
+				</a> <a class="gray" title="라디오 | 온라인 알람 시계"
+					href="http://radyo.onlinealarmkur.com/ko/"> <svg
+						viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+						class="svg-icon icon-radio">
+						<path
+							d="M20.016 12v-3.984h-16.031v3.984h12v-2.016h2.016v2.016h2.016zM6.984 20.016c1.641 0 3-1.359 3-3s-1.359-3-3-3-3 1.359-3 3 1.359 3 3 3zM3.234 6.141l12.656-5.156 0.656 1.688-8.25 3.328h11.719c1.125 0 1.969 0.891 1.969 2.016v12c0 1.078-0.844 1.969-1.969 1.969h-16.031c-1.125 0-1.969-0.891-1.969-1.969v-12c0-0.844 0.469-1.594 1.219-1.875z"></path></svg>리디오
+				</a>
+			</div>
+		</div>
+		<div class="row open-sans ltr">
+			<div id="clock"></div>
+			<div id="date"></div>
+		</div>
+		<div class="row">
+			<h2 id="when">알람 시간?</h2>
+			<div dir="ltr">
+				<select id="alarm-hours" class="selectpicker" data-size="5"
+					data-width="100" data-live-search="true"
+					data-none-results-text="일치하는 결과 없습니다 {0}">
+					<option value='00'>00</option>
+					<option value='01'>01</option>
+					<option value='02'>02</option>
+					<option value='03'>03</option>
+					<option value='04'>04</option>
+					<option value='05'>05</option>
+					<option value='06'>06</option>
+					<option value='07'>07</option>
+					<option value='08'>08</option>
+					<option value='09'>09</option>
+					<option value='10'>10</option>
+					<option value='11'>11</option>
+					<option value='12'>12</option>
+					<option value='13'>13</option>
+					<option value='14'>14</option>
+					<option value='15'>15</option>
+					<option value='16'>16</option>
+					<option value='17'>17</option>
+					<option value='18'>18</option>
+					<option value='19'>19</option>
+					<option value='20'>20</option>
+					<option value='21'>21</option>
+					<option value='22'>22</option>
+					<option value='23'>23</option>
+				</select> : <select id="alarm-minutes" class="minutes selectpicker"
+					data-size="5" data-width="100" data-live-search="true"
+					data-none-results-text="일치하는 결과 없습니다 {0}">
+					<option value='00'>00</option>
+					<option value='01'>01</option>
+					<option value='02'>02</option>
+					<option value='03'>03</option>
+					<option value='04'>04</option>
+					<option value='05'>05</option>
+					<option value='06'>06</option>
+					<option value='07'>07</option>
+					<option value='08'>08</option>
+					<option value='09'>09</option>
+					<option value='10'>10</option>
+					<option value='11'>11</option>
+					<option value='12'>12</option>
+					<option value='13'>13</option>
+					<option value='14'>14</option>
+					<option value='15'>15</option>
+					<option value='16'>16</option>
+					<option value='17'>17</option>
+					<option value='18'>18</option>
+					<option value='19'>19</option>
+					<option value='20'>20</option>
+					<option value='21'>21</option>
+					<option value='22'>22</option>
+					<option value='23'>23</option>
+					<option value='24'>24</option>
+					<option value='25'>25</option>
+					<option value='26'>26</option>
+					<option value='27'>27</option>
+					<option value='28'>28</option>
+					<option value='29'>29</option>
+					<option value='30'>30</option>
+					<option value='31'>31</option>
+					<option value='32'>32</option>
+					<option value='33'>33</option>
+					<option value='34'>34</option>
+					<option value='35'>35</option>
+					<option value='36'>36</option>
+					<option value='37'>37</option>
+					<option value='38'>38</option>
+					<option value='39'>39</option>
+					<option value='40'>40</option>
+					<option value='41'>41</option>
+					<option value='42'>42</option>
+					<option value='43'>43</option>
+					<option value='44'>44</option>
+					<option value='45'>45</option>
+					<option value='46'>46</option>
+					<option value='47'>47</option>
+					<option value='48'>48</option>
+					<option value='49'>49</option>
+					<option value='50'>50</option>
+					<option value='51'>51</option>
+					<option value='52'>52</option>
+					<option value='53'>53</option>
+					<option value='54'>54</option>
+					<option value='55'>55</option>
+					<option value='56'>56</option>
+					<option value='57'>57</option>
+					<option value='58'>58</option>
+					<option value='59'>59</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<h2 id="how">알람 소리?</h2>
+			<select id="alarm-audio" class="selectpicker" data-size="5"
+				data-live-search="false">
+				<option value="0"
+					data-src="http://onlinealarmkur.com/assets/ogg/saat.ogg">알람
+					시계</option>
+				<option value="1"
+					data-src="http://onlinealarmkur.com/assets/ogg/buzzer.ogg">부저</option>
+				<option value="2"
+					data-src="http://onlinealarmkur.com/assets/ogg/horoz.ogg">닭</option>
+				<option value="3"
+					data-src="http://onlinealarmkur.com/assets/ogg/siren.ogg">사이렌</option>
+				<option value="4"
+					data-src="http://onlinealarmkur.com/assets/ogg/nukleer.ogg">원자</option>
+				<option value="5"
+					data-src="http://onlinealarmkur.com/assets/ogg/uzay.ogg">외계인</option>
+				<option value="6"
+					data-src="http://onlinealarmkur.com/assets/ogg/yagmur.ogg">비</option>
+				<option value="7"
+					data-src="http://onlinealarmkur.com/assets/ogg/bomba.ogg">폭탄</option>
+				<option value="8"
+					data-src="http://onlinealarmkur.com/assets/ogg/mistik.ogg">신비로운</option>
+				<option value="9"
+					data-src="http://onlinealarmkur.com/assets/ogg/bell.ogg">종</option>
+				<option value="10"
+					data-src="http://onlinealarmkur.com/assets/ogg/dog-whistle.ogg">개
+					휘파람</option>
+			</select>
+		</div>
+		<div id="test" class="row">
+			<a href="#" title="소리를 테스트합니다" id="test_start"><svg
+					viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg"
+					class="svg-icon icon-play-circle">
+					<path
+						d="M12 2c6.625 0 12 5.375 12 12s-5.375 12-12 12-12-5.375-12-12 5.375-12 12-12zM18 14.859c0.313-0.172 0.5-0.5 0.5-0.859s-0.187-0.688-0.5-0.859l-8.5-5c-0.297-0.187-0.688-0.187-1-0.016-0.313 0.187-0.5 0.516-0.5 0.875v10c0 0.359 0.187 0.688 0.5 0.875 0.156 0.078 0.328 0.125 0.5 0.125s0.344-0.047 0.5-0.141z"></path></svg></a>
+			<a href="#" title="테스트를 중지합니다" id="test_stop"><svg
+					viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg"
+					class="svg-icon icon-stop">
+					<path
+						d="M24 3v22c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-22c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1z"></path></svg></a>
+		</div>
+		<div class="row">
+			<h2 id="snooze_duration">선잠 시간? (분)</h2>
+			<select id="alarm-snooze-minutes" class="selectpicker" data-size="2"
+				data-width="100" data-live-search="true"
+				data-none-results-text="일치하는 결과 없습니다 {0}">
+				<option value='01'>01</option>
+				<option value='02'>02</option>
+				<option value='03'>03</option>
+				<option value='04'>04</option>
+				<option value='05'>05</option>
+				<option value='06'>06</option>
+				<option value='07'>07</option>
+				<option value='08'>08</option>
+				<option value='09'>09</option>
+				<option value='10'>10</option>
+				<option value='11'>11</option>
+				<option value='12'>12</option>
+				<option value='13'>13</option>
+				<option value='14'>14</option>
+				<option value='15'>15</option>
+				<option value='16'>16</option>
+				<option value='17'>17</option>
+				<option value='18'>18</option>
+				<option value='19'>19</option>
+				<option value='20'>20</option>
+				<option value='21'>21</option>
+				<option value='22'>22</option>
+				<option value='23'>23</option>
+				<option value='24'>24</option>
+				<option value='25'>25</option>
+				<option value='26'>26</option>
+				<option value='27'>27</option>
+				<option value='28'>28</option>
+				<option value='29'>29</option>
+				<option value='30'>30</option>
+				<option value='31'>31</option>
+				<option value='32'>32</option>
+				<option value='33'>33</option>
+				<option value='34'>34</option>
+				<option value='35'>35</option>
+				<option value='36'>36</option>
+				<option value='37'>37</option>
+				<option value='38'>38</option>
+				<option value='39'>39</option>
+				<option value='40'>40</option>
+				<option value='41'>41</option>
+				<option value='42'>42</option>
+				<option value='43'>43</option>
+				<option value='44'>44</option>
+				<option value='45'>45</option>
+				<option value='46'>46</option>
+				<option value='47'>47</option>
+				<option value='48'>48</option>
+				<option value='49'>49</option>
+				<option value='50'>50</option>
+				<option value='51'>51</option>
+				<option value='52'>52</option>
+				<option value='53'>53</option>
+				<option value='54'>54</option>
+				<option value='55'>55</option>
+				<option value='56'>56</option>
+				<option value='57'>57</option>
+				<option value='58'>58</option>
+				<option value='59'>59</option>
+			</select>
+		</div>
+		<div class="row">
+			<h2 id="alarm-remaining-text" class="hidden">남은 시간</h2>
+			<div id="alarm-remaining"></div>
+		</div>
+		<div id="buttons" class="row ltr">
+			<button id="stop" type="button" class="btn btn-danger btn-md hidden">
+				<svg viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg"
+					class="svg-icon icon-stop">
+					<path
+						d="M24 3v22c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-22c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1z"></path></svg>
+				알람 시계를 중지합니다
+			</button>
+			<button id="start" type="button" class="btn btn-primary btn-md">
+				<svg viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg"
+					class="svg-icon icon-clock-o">
+					<path
+						d="M14 8.5v7c0 0.281-0.219 0.5-0.5 0.5h-5c-0.281 0-0.5-0.219-0.5-0.5v-1c0-0.281 0.219-0.5 0.5-0.5h3.5v-5.5c0-0.281 0.219-0.5 0.5-0.5h1c0.281 0 0.5 0.219 0.5 0.5zM20.5 14c0-4.688-3.813-8.5-8.5-8.5s-8.5 3.813-8.5 8.5 3.813 8.5 8.5 8.5 8.5-3.813 8.5-8.5zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"></path></svg>
+				알람 시계를 설정합니다
+			</button>
+			<button id="snooze" disabled="disabled" type="button"
+				class="btn btn-warning btn-md">
+				<svg viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg"
+					class="svg-icon icon-bed">
+					<path
+						d="M4 16h27c0.547 0 1 0.453 1 1v7h-4v-4h-24v4h-4v-19c0-0.547 0.453-1 1-1h2c0.547 0 1 0.453 1 1v11zM13 11c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zM32 15v-1c0-3.313-2.688-6-6-6h-11c-0.547 0-1 0.453-1 1v6h18z"></path></svg>
+				선잠
+			</button>
+		</div>
+		<div class="row after-clock-ads text-center">
+			<div class="col-xs-12">
+				<script async
+					src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<ins class="adsbygoogle ads-after-clock"
+					data-ad-client="ca-pub-9320198138637130" data-ad-slot="6768613205"
+					data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+		</div>
+		<div class="row">
+			<div id="disqus_thread" class="col-sm-offset-2 col-sm-8">
+				<noscript>댓글을 보기 위해 자바스크립트 켜기</noscript>
+			</div>
+		</div>
+		<div class="switch ltr">
+			<div class="buttons">
+				<a title="불을 끕니다" href="#" class="ligths-off" id="lights"><svg
+						viewBox="0 0 16 28" xmlns="http://www.w3.org/2000/svg"
+						class="svg-icon icon-lightbulb-o">
+						<path
+							d="M11.5 9c0 0.266-0.234 0.5-0.5 0.5s-0.5-0.234-0.5-0.5c0-1.078-1.672-1.5-2.5-1.5-0.266 0-0.5-0.234-0.5-0.5s0.234-0.5 0.5-0.5c1.453 0 3.5 0.766 3.5 2.5zM14 9c0-3.125-3.172-5-6-5s-6 1.875-6 5c0 1 0.406 2.047 1.062 2.812 0.297 0.344 0.641 0.672 0.953 1.031 1.109 1.328 2.047 2.891 2.203 4.656h3.563c0.156-1.766 1.094-3.328 2.203-4.656 0.313-0.359 0.656-0.688 0.953-1.031 0.656-0.766 1.062-1.813 1.062-2.812zM16 9c0 1.609-0.531 3-1.609 4.188s-2.5 2.859-2.625 4.531c0.453 0.266 0.734 0.766 0.734 1.281 0 0.375-0.141 0.734-0.391 1 0.25 0.266 0.391 0.625 0.391 1 0 0.516-0.266 0.984-0.703 1.266 0.125 0.219 0.203 0.484 0.203 0.734 0 1.016-0.797 1.5-1.703 1.5-0.406 0.906-1.313 1.5-2.297 1.5s-1.891-0.594-2.297-1.5c-0.906 0-1.703-0.484-1.703-1.5 0-0.25 0.078-0.516 0.203-0.734-0.438-0.281-0.703-0.75-0.703-1.266 0-0.375 0.141-0.734 0.391-1-0.25-0.266-0.391-0.625-0.391-1 0-0.516 0.281-1.016 0.734-1.281-0.125-1.672-1.547-3.344-2.625-4.531s-1.609-2.578-1.609-4.188c0-4.25 4.047-7 8-7s8 2.75 8 7z"></path></svg></a>
+				<a title="Online Alarm Kur Facebook" rel="noopener noreferrer"
+					target="_blank" href="https://www.facebook.com/onlinealarmkur"><svg
+						viewBox="0 0 16 28" xmlns="http://www.w3.org/2000/svg"
+						class="svg-icon icon-facebook">
+						<path
+							d="M14.984 0.187v4.125h-2.453c-1.922 0-2.281 0.922-2.281 2.25v2.953h4.578l-0.609 4.625h-3.969v11.859h-4.781v-11.859h-3.984v-4.625h3.984v-3.406c0-3.953 2.422-6.109 5.953-6.109 1.687 0 3.141 0.125 3.563 0.187z"></path></svg></a>
+				<a title="Online Alarm Kur Twitter" rel="noopener noreferrer"
+					target="_blank" href="https://twitter.com/onlinealarmkur"><svg
+						viewBox="0 0 26 28" xmlns="http://www.w3.org/2000/svg"
+						class="svg-icon icon-twitter">
+						<path
+							d="M25.312 6.375c-0.688 1-1.547 1.891-2.531 2.609 0.016 0.219 0.016 0.438 0.016 0.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-0.828-7.75-2.266 0.406 0.047 0.797 0.063 1.219 0.063 2.359 0 4.531-0.797 6.266-2.156-2.219-0.047-4.078-1.5-4.719-3.5 0.313 0.047 0.625 0.078 0.953 0.078 0.453 0 0.906-0.063 1.328-0.172-2.312-0.469-4.047-2.5-4.047-4.953v-0.063c0.672 0.375 1.453 0.609 2.281 0.641-1.359-0.906-2.25-2.453-2.25-4.203 0-0.938 0.25-1.797 0.688-2.547 2.484 3.062 6.219 5.063 10.406 5.281-0.078-0.375-0.125-0.766-0.125-1.156 0-2.781 2.25-5.047 5.047-5.047 1.453 0 2.766 0.609 3.687 1.594 1.141-0.219 2.234-0.641 3.203-1.219-0.375 1.172-1.172 2.156-2.219 2.781 1.016-0.109 2-0.391 2.906-0.781z"></path></svg></a>
+				<a class="text" href="#"
+					onclick="showPrivacy('ko','개인 정보 보호 고지','닫습니다','온라인 알람 시계','mail {@} burakozdemir (.) co [.] uk');"
+					title="개인 정보 보호 고지"> <svg viewBox="0 0 18 28"
+						xmlns="http://www.w3.org/2000/svg" class="svg-icon icon-lock">
+						<path
+							d="M5 12h8v-3c0-2.203-1.797-4-4-4s-4 1.797-4 4v3zM18 13.5v9c0 0.828-0.672 1.5-1.5 1.5h-15c-0.828 0-1.5-0.672-1.5-1.5v-9c0-0.828 0.672-1.5 1.5-1.5h0.5v-3c0-3.844 3.156-7 7-7s7 3.156 7 7v3h0.5c0.828 0 1.5 0.672 1.5 1.5z"></path></svg>개인
+					정보 보호 고지
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="ads-container-right">
+		<script async
+			src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle ads-skyscraper"
+			data-ad-client="ca-pub-9320198138637130" data-ad-slot="2626228800"
+			data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<div class="modal fade" id="about" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h3 class="modal-title">알람 시계에 대한 정보</h3>
+				</div>
+				<div class="modal-body">
+					<p>온라인 알람 시계는 무료로 온라인 알람 시계입니다. 기초 시계라고 부를 수 있습니다. 지금 알람 시계,
+						부저와 수탉 소리와 같은 표준 멜로디를 사용하는 세 가지 옵션이 있습니다. 당신은 알람 시계로 노래를 사용하기 위해서
+						좋아하는 유튜브 비디오를 선택할 수 있습니다. 당신은 당신을 깨우고 뭔가 생각나게 하기 위해서 라디오 방송국을 선택할
+						수 있습니다.</p>
+					<p>알람 시계 설정하려면 컴퓨터와 인터넷 연결이 필요해야 합니다. 첫째로, 알람 시간 세그먼트 아래에 시간과
+						분을 선택합니다. 그리고 소리 세그먼트 아래에 소리를 선택하고 일시 중지 지속 시간을 선택합니다. 마지막으로 알람 시계
+						버튼을 누릅니다. 알람 시계를 설장하기 전에 소리를 테스트합니다. 예를 유튜브나 라디오 채널입니다.</p>
+					<p>당신은 웹사이트를 좋아하면 왼쪽의 공유 버튼을 누르지 마세요.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">닫습니다</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="http://onlinealarmkur.com/assets/dist/script.min.js.pagespeed.jm.Xjr1fft2zh.js"></script>
+	<script>
+		$(function() {
+			$("body").onlineAlarmKur({
+				method : "audio"
+			});
+			var onlineAlarmKur = $('body').data('plugin_onlineAlarmKur');
+			$('#test_start').on('click', function() {
+				onlineAlarmKur.playAudio();
+			});
+			$('#test_stop').on('click', function() {
+				onlineAlarmKur.stopAudio();
+			});
+			$('#start').on('click', function() {
+				onlineAlarmKur.startAlarm();
+			});
+			$('#stop').on('click', function() {
+				onlineAlarmKur.stopAlarm();
+			});
+			$('#snooze').on('click', function() {
+				onlineAlarmKur.snoozeAlarm();
+			});
+		});
+	</script>
+	<script>
+		$('[data-toggle="tooltip"]').tooltip();
+		$('body').floatingSocialShare({
+			buttons : [ 'facebook', 'twitter', 'google-plus' ],
+			counter : false,
+			popup : false,
+			text : {
+				'facebook' : 'Facebook에 공유하기',
+				'twitter' : 'Twitter에 공유하기',
+				'google-plus' : 'Google+에 공유하기',
+				'default' : '에 공유하기'
+			}
+		});
+		WebFont.load({
+			google : {
+				families : [ 'Oswald:latin' ]
+			}
+		});
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-44747621-1', 'auto');
+		ga('send', 'pageview');
+		var disqus_shortname = 'onlinealarmkur', disqus_config = function() {
+			this.language = "ko";
+		};
+		(function() {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document
+					.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+</body>
+</html>

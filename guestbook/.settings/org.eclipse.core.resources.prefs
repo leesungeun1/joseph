@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/naver/action/GAction.java=UTF-8
+encoding//src/main/java/com/naver/dao/GDao.java=UTF-8
+encoding//src/main/java/com/naver/dao/GDaoImpl.java=UTF-8
+encoding//src/main/java/com/naver/model/ComBean.java=UTF-8
+encoding//src/main/java/com/naver/model/GBean.java=UTF-8
+encoding//src/main/webapp/sql=UTF-8
+encoding//src/main/webapp/sql/comment.sql=UTF-8
+encoding//src/main/webapp/sql/guest10.sql=UTF-8

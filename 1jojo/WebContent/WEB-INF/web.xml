@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <display-name>1jojo</display-name>
+  
+  	<servlet>
+		<servlet-name>BoardFrontController</servlet-name>
+		<servlet-class>net.board.action.BoardFrontController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ForumBoardFrontController</servlet-name>
+		<servlet-class>net.forumboard.action.ForumBoardFrontController</servlet-class>
+	</servlet>
+	
+	 <servlet>
+		<servlet-name>QnaBoardFrontController</servlet-name>
+		<servlet-class>net.qnaboard.action.QnaBoardFrontController</servlet-class>
+	</servlet>
+	
+  	<servlet>
+		<servlet-name>CrawlFrontController</servlet-name>
+		<servlet-class>net.crawl.action.CrawlFrontController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>BoardFrontController</servlet-name>
+		<url-pattern>*.bo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ForumBoardFrontController</servlet-name>
+		<url-pattern>*.fo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>QnaBoardFrontController</servlet-name>
+		<url-pattern>*.qo</url-pattern>
+	</servlet-mapping>
+	
+		<servlet-mapping>
+		<servlet-name>CrawlFrontController</servlet-name>
+		<url-pattern>*.cr</url-pattern>
+	</servlet-mapping> 
+	
+	<welcome-file-list>
+    <welcome-file>/member/main.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>   
+</web-app>

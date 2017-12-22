@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<body>
+
+<h2>JSON Object Creation in JavaScript</h2>
+
+<p id="demo"></p>
+<!--데모값을 뿌릴것이다. -->
+<script>
+var text = '{"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"}';
+
+var obj = JSON.parse(text);
+
+var info =
+ obj.name + "<br>" +
+ obj.street + "<br>" +
+ obj.phone;
+
+$("#demo").append(info);
+
+</script>
+
+</body>
+</html>

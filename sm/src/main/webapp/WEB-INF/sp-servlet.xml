@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- HandlerMapping -->
+	<!-- <bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/g_list.do=gAction
+				/g_cont.do=gAction
+				/comment_ok.do=gAction
+				/comment_del_ok.do=gAction
+				/g_write.do=gAction
+				/g_write_ok.do=gAction
+				/g_edit_ok.do=gAction
+				/g_del_ok.do=gAction
+			</value>
+		</property>
+	</bean> -->
+
+	<!-- Controller -->
+	<bean id="gAction" class="com.naver.action.GAction"
+	p:gService-ref="gService" />
+	
+	
+	
+	<!-- ViewResolver -->
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+</beans>
+
+
